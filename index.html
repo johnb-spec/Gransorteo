@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteos de Dinero - Compra tu Número</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <h1>🎉 Sorteos de Dinero 🎉</h1>
+        <p>¡Compra tu número y participa en sorteos semanales!</p>
+    </header>
+
+    <main>
+        <!-- Formulario de Compra (Integrado) -->
+        <section class="formulario-compra">
+            <h2>Selecciona tu Número</h2>
+            <form id="form-compra" action="https://formsubmit.co/tu-email@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="Nuevo pedido de número">
+                <div class="form-group">
+                    <label for="numero">Número deseado (3-5 cifras):</label>
+                    <input type="number" id="numero" name="numero" min="100" max="99999" required>
+                </div>
+                <div class="form-group">
+                    <label for="metodo-pago">Método de pago:</label>
+                    <select id="metodo-pago" name="metodo-pago" required>
+                        <option value="nequi">Nequi</option>
+                        <option value="daviplata">Daviplata</option>
+                        <option value="transferencia">Transferencia Bancaria</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono (para confirmación):</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="terminos" name="terminos" required>
+                    <label for="terminos">Acepto los <a href="#terminos-condiciones">términos y condiciones</a>.</label>
+                </div>
+                <button type="submit" class="btn-comprar">Reservar Número</button>
+            </form>
+        </section>
+
+        <!-- Pasarelas de Pago (Actualizado) -->
+        <section class="pasarelas">
+            <h2>Métodos de Pago</h2>
+            <button id="btn-nequi" onclick="window.location.href='nequi://pay?phone=3022399334&amount=10000'">
+                <img src="images/nequi-logo.png" alt="Nequi"> Pagar con Nequi
+            </button>
+            <button id="btn-daviplata" onclick="window.location.href='daviplata://payment?phone=3022399334&value=10000'">
+                <img src="images/daviplata-logo.png" alt="Daviplata"> Pagar con Daviplata
+            </button>
+            <button id="btn-transferencia" onclick="alert('Bancolombia\nCuenta: XXXX-XXXX-XXXX\nA nombre de: John Bolivar')">
+                <img src="images/bancolombia-logo.png" alt="Transferencia"> Transferencia Bancaria
+            </button>
+        </section>
+
+        <!-- Términos y Condiciones (Integrado) -->
+        <section id="terminos-condiciones" class="terminos">
+            <h2>Términos y Condiciones</h2>
+            <div class="terminos-content">
+                <p>1. Participantes deben ser mayores de 18 años.</p>
+                <p>2. Cada número tiene un costo único según su cantidad de cifras.</p>
+                <p>3. Los sorteos se realizarán en vivo y se publicarán en esta página.</p>
+                <p>4. No nos hacemos responsables por fallas en transferencias no confirmadas.</p>
+            </div>
+        </section>
+
+        <!-- Contacto (Actualizado) -->
+        <section class="contacto">
+            <h2>¿Dudas? Contáctanos</h2>
+            <a href="https://wa.me/573022399334?text=Quiero%20comprar%20el%20número%20[XXX]" class="btn-whatsapp">
+                <img src="images/whatsapp-logo.png" alt="WhatsApp"> WhatsApp
+            </a>
+            <a href="https://t.me/John_Bolivar" class="btn-telegram">
+                <img src="images/telegram-logo.png" alt="Telegram"> Telegram
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Sorteos de Dinero. Juego responsable para mayores de 18 años.</p>
+    </footer>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>
